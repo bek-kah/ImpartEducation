@@ -4,7 +4,7 @@ import SwiftUI
 struct ImpartApp: App {
     var body: some Scene {
         WindowGroup {
-            SignInView()
+            HomeView()
         }
     }
 }

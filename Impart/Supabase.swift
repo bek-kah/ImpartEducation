@@ -1,8 +1,35 @@
-//
-//  Supabase.swift
-//  Impart
-//
-//  Created by Ulugbek Kahramonov on 3/6/26.
-//
+import SwiftUI
+import Supabase
 
-import Foundation
+class Supabase {
+    let client: SupabaseClient = SupabaseClient(supabaseURL: URL(string: "https://dmttqbdpatbxuxsumecb.supabase.co")!, supabaseKey: "sb_publishable_o1_5CrxLlK8amj3AM1SIiA_XQpMxvcP")
+    
+    var currentSession: Session?
+    var currentUser: Auth.User?
+    
+    init() {}
+    
+    func signUp(email: String, password: String) async -> String? {
+        do {
+            let response = try await client.auth.signUp(email: email, password: password)
+            currentUser = response.user
+            currentSession = response.session
+            return nil
+        } catch {
+            return error.localizedDescription
+        }
+    }
+    
+    
+    func logIn(email: String, password: String) async -> String? {
+        do {
+            let response = try await client.auth.signIn(email: email, password: password)
+            currentUser = response.user
+            return nil
+        } catch {
+            return error.localizedDescription
+        }
+    }
+}
+
+

@@ -4,7 +4,6 @@ struct DashboardView: View {
     var body: some View {
         NavigationStack {
             List {
-                
                 VStack(alignment: .leading) {
                     HStack {
                         VStack {

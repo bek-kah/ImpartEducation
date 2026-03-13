@@ -1,9 +1,17 @@
 import SwiftUI
+internal import Auth
 
 struct SettingsView: View {
+    
     @State private var email: String = "bek.kahramonov@outlook.com"
     @State private var password: String = ""
     
+    private var supabase: Supabase
+    
+    init(supabase: Supabase) {
+        self.supabase = supabase
+        self._email = State(initialValue: supabase.currentUser?.email ?? "")
+    }
     
     var body: some View {
         NavigationStack {
@@ -61,5 +69,5 @@ struct SettingsView: View {
 }
 
 #Preview {
-    SettingsView()
+    SettingsView(supabase: Supabase())
 }
