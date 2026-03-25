@@ -30,6 +30,17 @@ class Supabase {
             return error.localizedDescription
         }
     }
+    
+    func signOut() async -> String? {
+        do {
+            try await client.auth.signOut()
+            currentUser = nil
+            currentSession = nil
+            return nil
+        } catch {
+            return error.localizedDescription
+        }
+    }
 }
 
 

@@ -6,10 +6,16 @@ struct SettingsView: View {
     @State private var email: String = "bek.kahramonov@outlook.com"
     @State private var password: String = ""
     
+    @Binding var isAuthenticated: Bool
+    
     private var supabase: Supabase
     
-    init(supabase: Supabase) {
+    init(
+        supabase: Supabase,
+        isAuthenticated: Binding<Bool>
+    ) {
         self.supabase = supabase
+        self._isAuthenticated = isAuthenticated
         self._email = State(initialValue: supabase.currentUser?.email ?? "")
     }
     
@@ -55,7 +61,7 @@ struct SettingsView: View {
                     }
                     
                     Section {
-                        Button("Sign Out", role: .destructive, action: {})
+                        Button("Sign Out", role: .destructive, action: signOut)
                             .frame(maxWidth: .infinity, alignment: .center)
                             .listRowBackground(Color.clear)
 
@@ -66,8 +72,18 @@ struct SettingsView: View {
             .navigationTitle("Settings")
         }
     }
+    
+    func signOut() {
+        Task {
+            if let errorMessage = await supabase.signOut() {
+                print(errorMessage)
+            } else {
+                isAuthenticated = false
+            }
+        }
+    }
 }
 
 #Preview {
-    SettingsView(supabase: Supabase())
+    SettingsView(supabase: Supabase(), isAuthenticated: .constant(true))
 }

@@ -27,9 +27,41 @@ struct CourseView: View {
                 
                 
                 Section() {
-                    NavigationLink("Curriculum") {}
-                    NavigationLink("Assignments") {}
-                    NavigationLink("Grades") {}
+                    NavigationLink {
+                        CurriculumView()
+                    } label: {
+                        HStack {
+                            Image(systemName: "book")
+                                .foregroundStyle(Color.blue.opacity(0.7))
+                                .padding(.trailing, 5)
+                            Text("Curriculum")
+                            Spacer()
+                        }
+                    }
+                    
+                    NavigationLink {
+                        AssignmentsView()
+                    } label: {
+                        HStack {
+                            Image(systemName: "pencil.and.list.clipboard")
+                                .foregroundStyle(Color.blue.opacity(0.7))
+                                .padding(.trailing, 5)
+                            Text("Assignments")
+                            Spacer()
+                        }
+                    }
+                    
+                    NavigationLink {
+                
+                    } label: {
+                        HStack {
+                            Image(systemName: "medal")
+                                .foregroundStyle(Color.blue.opacity(0.7))
+                                .padding(.trailing, 5)
+                            Text("Grades")
+                            Spacer()
+                        }
+                    }
                 }
             }
             .navigationTitle("Intro to CS")

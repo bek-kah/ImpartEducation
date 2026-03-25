@@ -13,7 +13,10 @@ struct HomeView: View {
                         DashboardView()
                     }
                     Tab("Settings", systemImage: "gear") {
-                        SettingsView(supabase: supabase)
+                        SettingsView(
+                            supabase: supabase,
+                            isAuthenticated: $isAuthenticated
+                        )
                     }
                 }
                 .transition(.move(edge: .trailing))

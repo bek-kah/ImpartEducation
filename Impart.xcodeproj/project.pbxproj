@@ -18,6 +18,8 @@
 		47D6F3B42F61000000A0CC28 /* SettingsView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 47D6F3AC2F61000000A0CC28 /* SettingsView.swift */; };
 		47D6F3B52F61000000A0CC28 /* Supabase.swift in Sources */ = {isa = PBXBuildFile; fileRef = 47D6F3AD2F61000000A0CC28 /* Supabase.swift */; };
 		47D6F3B62F61000000A0CC28 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 47D6F3A62F61000000A0CC28 /* Assets.xcassets */; };
+		47E98F0E2F736F60005C8275 /* CurriculumView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 47E98F0D2F736F60005C8275 /* CurriculumView.swift */; };
+		47E98F102F73700E005C8275 /* AssignmentsView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 47E98F0F2F73700E005C8275 /* AssignmentsView.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -30,6 +32,8 @@
 		47D6F3AB2F61000000A0CC28 /* ImpartApp.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ImpartApp.swift; sourceTree = "<group>"; };
 		47D6F3AC2F61000000A0CC28 /* SettingsView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SettingsView.swift; sourceTree = "<group>"; };
 		47D6F3AD2F61000000A0CC28 /* Supabase.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Supabase.swift; sourceTree = "<group>"; };
+		47E98F0D2F736F60005C8275 /* CurriculumView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CurriculumView.swift; sourceTree = "<group>"; };
+		47E98F0F2F73700E005C8275 /* AssignmentsView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AssignmentsView.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -79,6 +83,8 @@
 				47D6F3A92F61000000A0CC28 /* DashboardView.swift */,
 				47D6F3AC2F61000000A0CC28 /* SettingsView.swift */,
 				47D6F3A82F61000000A0CC28 /* CourseView.swift */,
+				47E98F0D2F736F60005C8275 /* CurriculumView.swift */,
+				47E98F0F2F73700E005C8275 /* AssignmentsView.swift */,
 				47D6F3AB2F61000000A0CC28 /* ImpartApp.swift */,
 				47D6F3AD2F61000000A0CC28 /* Supabase.swift */,
 			);
@@ -171,9 +177,11 @@
 			files = (
 				47D6F3AF2F61000000A0CC28 /* AuthView.swift in Sources */,
 				47D6F3B02F61000000A0CC28 /* CourseView.swift in Sources */,
+				47E98F102F73700E005C8275 /* AssignmentsView.swift in Sources */,
 				47D6F3B12F61000000A0CC28 /* DashboardView.swift in Sources */,
 				47D6F3B22F61000000A0CC28 /* HomeView.swift in Sources */,
 				47D6F3B32F61000000A0CC28 /* ImpartApp.swift in Sources */,
+				47E98F0E2F736F60005C8275 /* CurriculumView.swift in Sources */,
 				47D6F3B42F61000000A0CC28 /* SettingsView.swift in Sources */,
 				47D6F3B52F61000000A0CC28 /* Supabase.swift in Sources */,
 			);

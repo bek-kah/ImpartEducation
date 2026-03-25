@@ -41,9 +41,6 @@ struct AuthView: View {
             .navigationTitle("Impart")
             .navigationBarTitleDisplayMode(.inline)
         }
-        .onChange(of: supabase.currentUser) {
-            isAuthenticated = true
-        }
     }
 }
 
@@ -62,8 +59,10 @@ extension AuthView {
             VStack {
                 TextField("Email", text: $email)
                     .textInputAutocapitalization(.never)
+                    .disableAutocorrection(true)
                 SecureField("Password", text: $password)
                     .textInputAutocapitalization(.never)
+                    .disableAutocorrection(true)
                     .padding(.bottom)
                 
                 if let errorMessage = errorMessage {
@@ -78,6 +77,9 @@ extension AuthView {
             Button("Sign in") {
                 Task {
                     errorMessage = await supabase.logIn(email: email, password: password)
+                    if errorMessage == nil {
+                        isAuthenticated = true
+                    }
                 }
             }
             .disabled(password.isEmpty || email.isEmpty)
@@ -121,7 +123,7 @@ extension AuthView {
             Button("Sign up") {
                 Task {
                     errorMessage = await supabase.signUp(email: email, password: password)
-                    authPageType = .confirmEmail
+//                    authPageType = .confirmEmail
                 }
             }
             .disabled(password.isEmpty || email.isEmpty)
