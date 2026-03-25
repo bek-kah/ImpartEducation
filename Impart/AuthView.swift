@@ -13,18 +13,10 @@ struct AuthView: View {
     
     @State private var errorMessage: String? = nil
     
-    @Binding var isAuthenticated: Bool
     @State private var authPageType: AuthViewType = .logIn
     
-    private var supabase: Supabase
-    
-    init(
-        isAuthenticated: Binding<Bool>,
-        supabase: Supabase
-    ) {
-        self._isAuthenticated = isAuthenticated
-        self.supabase = supabase
-    }
+    @EnvironmentObject var supabase: SupabaseManager
+
     
     var body: some View {
         NavigationStack {
@@ -44,10 +36,6 @@ struct AuthView: View {
     }
 }
 
-#Preview {
-    AuthView(isAuthenticated: .constant(false), supabase: Supabase())
-}
-
 extension AuthView {
     var logInView: some View {
         Group {
@@ -58,12 +46,15 @@ extension AuthView {
             
             VStack {
                 TextField("Email", text: $email)
+                    .textContentType(.emailAddress)
                     .textInputAutocapitalization(.never)
                     .disableAutocorrection(true)
                 SecureField("Password", text: $password)
+                    .textContentType(.password)
                     .textInputAutocapitalization(.never)
                     .disableAutocorrection(true)
                     .padding(.bottom)
+                    .onSubmit { performLogin() }
                 
                 if let errorMessage = errorMessage {
                     Text(errorMessage)
@@ -74,22 +65,23 @@ extension AuthView {
             .padding()
             .textFieldStyle(.roundedBorder)
             
-            Button("Sign in") {
-                Task {
-                    errorMessage = await supabase.logIn(email: email, password: password)
-                    if errorMessage == nil {
-                        isAuthenticated = true
-                    }
-                }
-            }
+            Button("Sign in", action: performLogin)
             .disabled(password.isEmpty || email.isEmpty)
             .buttonStyle(.borderedProminent)
-            .tint(.primary)
             
             Button("Forgot your password?", action: {})
             HStack {
                 Text("Don't have an account?")
                 Button("Sign up", action: { authPageType = .signUp })
+            }
+        }
+    }
+    
+    func performLogin() {
+        guard !password.isEmpty && !email.isEmpty else { return }
+        Task {
+            if let errorMessage = await supabase.logIn(email: email, password: password) {
+                print(errorMessage)
             }
         }
     }
@@ -150,4 +142,10 @@ extension AuthView {
             }
         }
     }
+}
+
+
+
+#Preview {
+    AuthView()
 }

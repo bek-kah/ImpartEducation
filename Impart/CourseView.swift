@@ -13,6 +13,7 @@ struct CourseView: View {
                                 .font(.system(size: 14))
                             Text("Introduction to Computer Science")
                                 .font(.system(size: 24, weight: .heavy))
+                                .fixedSize(horizontal: false, vertical: true)
                         }
                             .padding(.top, 100)
                         

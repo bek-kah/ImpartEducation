@@ -1,33 +1,27 @@
 import SwiftUI
 
-
 struct HomeView: View {
-    @State private var isAuthenticated: Bool = false
-    private var supabase = Supabase()
-    
+    @EnvironmentObject var supabase: SupabaseManager
+
     var body: some View {
         ZStack {
-            if isAuthenticated {
+            if supabase.isLoading {
+                ProgressView()
+            } else if supabase.currentUser != nil {
                 TabView {
                     Tab("Dashboard", systemImage: "square.grid.2x2") {
                         DashboardView()
                     }
                     Tab("Settings", systemImage: "gear") {
-                        SettingsView(
-                            supabase: supabase,
-                            isAuthenticated: $isAuthenticated
-                        )
+                        SettingsView()
                     }
                 }
                 .transition(.move(edge: .trailing))
             } else {
-                AuthView(
-                    isAuthenticated: $isAuthenticated,
-                    supabase: supabase
-                )
-                .transition(.move(edge: .leading))
+                AuthView()
+                    .transition(.move(edge: .leading))
             }
         }
-        .animation(.easeInOut(duration: 0.4), value: isAuthenticated)
+        .animation(.easeInOut(duration: 0.4), value: supabase.currentUser == nil)
     }
 }
