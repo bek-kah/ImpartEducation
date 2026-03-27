@@ -9,6 +9,8 @@
 /* Begin PBXBuildFile section */
 		477E32F12F60F8E300D55F07 /* Auth in Frameworks */ = {isa = PBXBuildFile; productRef = 477E32F02F60F8E300D55F07 /* Auth */; };
 		477E32F32F60F8E300D55F07 /* Storage in Frameworks */ = {isa = PBXBuildFile; productRef = 477E32F22F60F8E300D55F07 /* Storage */; };
+		47CFB6B02F75FACC002F3C04 /* Assignments.swift in Sources */ = {isa = PBXBuildFile; fileRef = 47CFB6AF2F75FACC002F3C04 /* Assignments.swift */; };
+		47CFB6B22F760FAC002F3C04 /* GradesView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 47CFB6B12F760FAC002F3C04 /* GradesView.swift */; };
 		47D6F3A52F60FAA000A0CC28 /* Supabase in Frameworks */ = {isa = PBXBuildFile; productRef = 47D6F3A42F60FAA000A0CC28 /* Supabase */; };
 		47D6F3AF2F61000000A0CC28 /* AuthView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 47D6F3A72F61000000A0CC28 /* AuthView.swift */; };
 		47D6F3B02F61000000A0CC28 /* CourseView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 47D6F3A82F61000000A0CC28 /* CourseView.swift */; };
@@ -24,6 +26,8 @@
 
 /* Begin PBXFileReference section */
 		470D7A4A2F574E50008B64DD /* Impart.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = Impart.app; sourceTree = BUILT_PRODUCTS_DIR; };
+		47CFB6AF2F75FACC002F3C04 /* Assignments.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Assignments.swift; sourceTree = "<group>"; };
+		47CFB6B12F760FAC002F3C04 /* GradesView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GradesView.swift; sourceTree = "<group>"; };
 		47D6F3A62F61000000A0CC28 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		47D6F3A72F61000000A0CC28 /* AuthView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AuthView.swift; sourceTree = "<group>"; };
 		47D6F3A82F61000000A0CC28 /* CourseView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CourseView.swift; sourceTree = "<group>"; };
@@ -85,6 +89,8 @@
 				47D6F3A82F61000000A0CC28 /* CourseView.swift */,
 				47E98F0D2F736F60005C8275 /* CurriculumView.swift */,
 				47E98F0F2F73700E005C8275 /* AssignmentsView.swift */,
+				47CFB6AF2F75FACC002F3C04 /* Assignments.swift */,
+				47CFB6B12F760FAC002F3C04 /* GradesView.swift */,
 				47D6F3AB2F61000000A0CC28 /* ImpartApp.swift */,
 				47D6F3AD2F61000000A0CC28 /* Supabase.swift */,
 			);
@@ -182,6 +188,8 @@
 				47D6F3B22F61000000A0CC28 /* HomeView.swift in Sources */,
 				47D6F3B32F61000000A0CC28 /* ImpartApp.swift in Sources */,
 				47E98F0E2F736F60005C8275 /* CurriculumView.swift in Sources */,
+				47CFB6B22F760FAC002F3C04 /* GradesView.swift in Sources */,
+				47CFB6B02F75FACC002F3C04 /* Assignments.swift in Sources */,
 				47D6F3B42F61000000A0CC28 /* SettingsView.swift in Sources */,
 				47D6F3B52F61000000A0CC28 /* Supabase.swift in Sources */,
 			);

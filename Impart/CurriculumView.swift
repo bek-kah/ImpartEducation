@@ -68,6 +68,7 @@ struct CurriculumView: View {
                     }
                 }
             }
+            .scrollContentBackground(.hidden)
         }
     }
 }

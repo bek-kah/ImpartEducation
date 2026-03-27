@@ -1,0 +1,245 @@
+import SwiftUI
+
+
+// MARK: Assigment
+enum AssignmentStatus {
+    case locked, open
+    
+    var systemImage: String {
+        switch self {
+        case .locked:
+            return "lock"
+        case .open:
+            return "list.bullet.clipboard"
+        }
+    }
+}
+
+enum AssignmentSubmissionStatus {
+    case notSubmitted, submitted, graded
+    
+    var text: String {
+        switch self {
+        case .notSubmitted:
+            return "Not Submitted"
+        case .submitted:
+            return "Submitted"
+        case .graded:
+            return "Graded"
+        }
+    }
+    
+    var systemImage: String {
+        switch self {
+        case .notSubmitted:
+            return "circle.slash"
+        case .submitted, .graded:
+            return "checkmark.circle"
+        }
+    }
+    
+    var foregroundStyle: AnyShapeStyle {
+        switch self {
+        case .notSubmitted, .submitted:
+            return AnyShapeStyle(.secondary)
+        case .graded:
+            return AnyShapeStyle(.green)
+        }
+    }
+}
+
+struct Assignment {
+    let id: UUID
+    let name: String
+    let dueDate: Date
+    let grade: Double?
+    let outOf: Int
+    
+    let status: AssignmentStatus
+    let submissionStatus: AssignmentSubmissionStatus
+    
+    init(id: UUID = UUID(), name: String, dueDate: Date, grade: Double?, outOf: Int, status: AssignmentStatus, submissionStatus: AssignmentSubmissionStatus) {
+        self.id = id
+        self.name = name
+        self.dueDate = dueDate
+        self.grade = grade
+        self.outOf = outOf
+        self.status = status
+        self.submissionStatus = submissionStatus
+    }
+    
+    var dueDateString: String {
+        let formatter = DateFormatter()
+        formatter.dateFormat = "MMM d, yyyy 'at' hh:mm a"
+        let string = formatter.string(from: dueDate)
+        return "Due " + string
+    }
+    
+    var gradeString: String {
+        grade.map { String($0.rounded()) } ?? "-"
+    }
+}
+
+struct AssignmentView: View {
+    let assignment: Assignment
+    
+    var body: some View {
+        NavigationLink {
+            
+        } label: {
+            HStack {
+                Image(systemName: assignment.status.systemImage)
+                    .foregroundStyle(.orange)
+                    .padding(.trailing, 5)
+                VStack(alignment: .leading, spacing: 5) {
+                    Text(assignment.name)
+                        .font(.system(size: 16, weight: .medium))
+                    Text(assignment.dueDateString)
+                        .font(.system(size: 14, weight: .regular))
+                        .foregroundStyle(.secondary)
+                    HStack {
+                        Text(assignment.submissionStatus.text)
+                        Image(systemName: assignment.submissionStatus.systemImage)
+                    }
+                    .font(.system(size: 14, weight: .regular))
+                    .foregroundStyle(assignment.submissionStatus.foregroundStyle)
+                }
+                
+                Spacer()
+                
+                Text("\(assignment.gradeString)/\(assignment.outOf)")
+                    .font(.system(size: 16, weight: .regular))
+                    .foregroundStyle(.orange)
+                    .padding(.trailing, 8)
+            }
+        }
+    }
+}
+
+struct AssignmentsSection {
+    let id: UUID
+    let assignments: [Assignment]
+    let type: AssigmentsSectionType
+    
+    init(id: UUID = UUID(), assignments: [Assignment], type: AssigmentsSectionType) {
+        self.id = id
+        self.assignments = assignments
+        self.type = type
+    }
+    
+    static func fake() -> Self {
+        let calendar = Calendar.current
+        let tomorrow = calendar.date(byAdding: .day, value: 1, to: Date())!
+        let dueTomorrow = calendar.date(bySettingHour: 23, minute: 59, second: 0, of: tomorrow)!
+        
+        let upcomingAssignment1 = Assignment(
+            name: "Submission Practice",
+            dueDate: dueTomorrow,
+            grade: nil,
+            outOf: 10,
+            status: .locked,
+            submissionStatus: .notSubmitted
+        )
+        
+        let dueDayAfterNext = calendar.date(byAdding: .day, value: 2, to: Date())!
+
+        let upcomingAssignment2 = Assignment(
+            name: "Problem Set 1",
+            dueDate: dueDayAfterNext,
+            grade: 4,
+            outOf: 10,
+            status: .open,
+            submissionStatus: .graded
+        )
+        
+        return AssignmentsSection(assignments: [upcomingAssignment1, upcomingAssignment2], type: .upcoming)
+    }
+}
+
+
+// MARK: Assigments Section
+enum AssigmentsSectionType {
+    case upcoming, past
+    
+    var text: String {
+        switch self {
+        case .upcoming:
+            return "Upcoming Assignments"
+        case .past:
+            return "Past Assignments"
+        }
+    }
+}
+
+struct AssignmentsSectionView: View {
+    
+    @Binding var showAssignmentsSection: Bool
+    
+    let assignmentsSection: AssignmentsSection
+    
+    var body: some View {
+        Section {
+            if showAssignmentsSection {
+                ForEach(assignmentsSection.assignments, id: \.id) { assignment in
+                    AssignmentView(assignment: assignment)
+                }
+            }
+        } header: {
+            HStack {
+                Text(assignmentsSection.type.text)
+                Spacer()
+                Button {
+                    withAnimation {
+                        showAssignmentsSection.toggle()
+                    }
+                } label: {
+                    Image(systemName: showAssignmentsSection ? "chevron.up" : "chevron.down")
+                }
+                .foregroundStyle(.secondary)
+            }
+        }
+    }
+}
+
+
+
+// MARK: Stat Capsule View
+struct StatCapsuleView: View {
+    let label: String
+    let imageName: String
+    let primary: String
+    let secondary: String?
+
+    var body: some View {
+        HStack(alignment: .firstTextBaseline) {
+            VStack(alignment: .leading, spacing: 15) {
+                Image(systemName: imageName)
+                    .foregroundStyle(.secondary)
+                Text(label)
+                    .font(.system(size: 17, weight: .medium, design: .default))
+                    .foregroundStyle(.secondary)
+            }
+
+            Spacer()
+
+            HStack(alignment: .lastTextBaseline, spacing: 0) {
+                Text(primary)
+                    .font(.system(size: 24, weight: .medium, design: .default))
+                    .foregroundStyle(.primary)
+
+                if let secondary {
+                    Text("\(secondary)")
+                        .font(.system(size: 15, weight: .medium, design: .default))
+                        .foregroundStyle(.secondary)
+                }
+            }
+        }
+        .padding(15)
+        .background(.regularMaterial, in: RoundedRectangle(cornerRadius: 20))
+    }
+}
+
+
+#Preview {
+    GradesView()
+}

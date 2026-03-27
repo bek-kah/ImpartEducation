@@ -19,7 +19,7 @@ struct CourseView: View {
                         
                         
                         Text("Build a strong foundation in programming fundamentals, problem-solving strategies, and computational thinking. Learn core concepts through hands-on coding exercises ")
-                            .padding(.vertical, 30)
+                            .padding(.top, 30)
                     }
                     .padding()
                     .foregroundStyle(.white)
@@ -53,7 +53,7 @@ struct CourseView: View {
                     }
                     
                     NavigationLink {
-                
+                        GradesView()
                     } label: {
                         HStack {
                             Image(systemName: "medal")
@@ -67,6 +67,7 @@ struct CourseView: View {
             }
             .navigationTitle("Intro to CS")
             .navigationBarTitleDisplayMode(.inline)
+            .defaultScrollAnchor(.top)
         }
     }
 }
