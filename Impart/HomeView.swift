@@ -12,6 +12,9 @@ struct HomeView: View {
                     Tab("Dashboard", systemImage: "square.grid.2x2") {
                         DashboardView()
                     }
+                    Tab("To-dos", systemImage: "list.bullet.clipboard") {
+                        TodosView()
+                    }
                     Tab("Settings", systemImage: "gear") {
                         SettingsView()
                     }

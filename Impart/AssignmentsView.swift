@@ -12,6 +12,7 @@ struct AssignmentsView: View {
                     assignmentsSection: .fake()
                 )
             }
+            .listStyle(.plain)
             .scrollContentBackground(.hidden)
         }
     }

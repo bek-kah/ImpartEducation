@@ -60,7 +60,7 @@ struct DashboardView: View {
                 }
                 .padding(.horizontal)
             }
-            .navigationTitle("Dashboard")
+            .navigationTitle("Impart")
             .navigationBarTitleDisplayMode(.inline)
         }
     }

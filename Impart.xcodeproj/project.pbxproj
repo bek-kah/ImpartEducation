@@ -7,6 +7,7 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		4700E2F62F7CB1DB00DCCB61 /* TodosView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4700E2F52F7CB1DB00DCCB61 /* TodosView.swift */; };
 		477E32F12F60F8E300D55F07 /* Auth in Frameworks */ = {isa = PBXBuildFile; productRef = 477E32F02F60F8E300D55F07 /* Auth */; };
 		477E32F32F60F8E300D55F07 /* Storage in Frameworks */ = {isa = PBXBuildFile; productRef = 477E32F22F60F8E300D55F07 /* Storage */; };
 		47CFB6B02F75FACC002F3C04 /* Assignments.swift in Sources */ = {isa = PBXBuildFile; fileRef = 47CFB6AF2F75FACC002F3C04 /* Assignments.swift */; };
@@ -25,6 +26,7 @@
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
+		4700E2F52F7CB1DB00DCCB61 /* TodosView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TodosView.swift; sourceTree = "<group>"; };
 		470D7A4A2F574E50008B64DD /* Impart.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = Impart.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		47CFB6AF2F75FACC002F3C04 /* Assignments.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Assignments.swift; sourceTree = "<group>"; };
 		47CFB6B12F760FAC002F3C04 /* GradesView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GradesView.swift; sourceTree = "<group>"; };
@@ -84,6 +86,7 @@
 				47D6F3A62F61000000A0CC28 /* Assets.xcassets */,
 				47D6F3A72F61000000A0CC28 /* AuthView.swift */,
 				47D6F3AA2F61000000A0CC28 /* HomeView.swift */,
+				4700E2F52F7CB1DB00DCCB61 /* TodosView.swift */,
 				47D6F3A92F61000000A0CC28 /* DashboardView.swift */,
 				47D6F3AC2F61000000A0CC28 /* SettingsView.swift */,
 				47D6F3A82F61000000A0CC28 /* CourseView.swift */,
@@ -191,6 +194,7 @@
 				47CFB6B22F760FAC002F3C04 /* GradesView.swift in Sources */,
 				47CFB6B02F75FACC002F3C04 /* Assignments.swift in Sources */,
 				47D6F3B42F61000000A0CC28 /* SettingsView.swift in Sources */,
+				4700E2F62F7CB1DB00DCCB61 /* TodosView.swift in Sources */,
 				47D6F3B52F61000000A0CC28 /* Supabase.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;

@@ -21,11 +21,14 @@ struct CourseView: View {
                         Text("Build a strong foundation in programming fundamentals, problem-solving strategies, and computational thinking. Learn core concepts through hands-on coding exercises ")
                             .padding(.top, 30)
                     }
-                    .padding()
+                    .padding(25)
                     .foregroundStyle(.white)
+                    .background(
+                        .blue.gradient,
+                        in: RoundedRectangle(cornerRadius: 25))
                 }
-                .listRowBackground(Color.blue.opacity(0.7))
-                
+                .listRowSeparator(.hidden)
+                .listRowBackground(Color.clear)
                 
                 Section() {
                     NavigationLink {
@@ -65,7 +68,8 @@ struct CourseView: View {
                     }
                 }
             }
-            .navigationTitle("Intro to CS")
+            .listStyle(.plain)
+            .navigationTitle("CS101")
             .navigationBarTitleDisplayMode(.inline)
             .defaultScrollAnchor(.top)
         }

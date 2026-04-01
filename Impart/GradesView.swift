@@ -52,8 +52,47 @@ struct GradesView: View {
             List {
                 AssignmentsSectionView(showAssignmentsSection: $showUpcomingAssignments, assignmentsSection: .fake())
             }
+            .listStyle(.plain)
             .scrollContentBackground(.hidden)
         }
+    }
+}
+
+// MARK: Stat Capsule View
+struct StatCapsuleView: View {
+    let label: String
+    let imageName: String
+    let primary: String
+    let secondary: String?
+
+    var body: some View {
+        HStack(alignment: .firstTextBaseline) {
+            VStack(alignment: .leading, spacing: 15) {
+                Image(systemName: imageName)
+                    .foregroundStyle(.white.opacity(2/3))
+                Text(label)
+                    .font(.system(size: 17, weight: .medium, design: .default))
+                    .foregroundStyle(.white.opacity(2/3))
+            }
+
+            Spacer()
+
+            HStack(alignment: .lastTextBaseline, spacing: 0) {
+                Text(primary)
+                    .font(.system(size: 24, weight: .medium, design: .default))
+                    .foregroundStyle(.white)
+
+                if let secondary {
+                    Text("\(secondary)")
+                        .font(.system(size: 15, weight: .medium, design: .default))
+                        .foregroundStyle(.white.opacity(2/3))
+                }
+            }
+        }
+        .padding(15)
+        .background(
+            .orange.mix(with: .red, by: 1/3).gradient,
+            in: RoundedRectangle(cornerRadius: 20))
     }
 }
 

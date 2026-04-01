@@ -89,7 +89,7 @@ struct AssignmentView: View {
         } label: {
             HStack {
                 Image(systemName: assignment.status.systemImage)
-                    .foregroundStyle(.orange)
+                    .foregroundStyle(.orange.mix(with: .red, by: 1/3))
                     .padding(.trailing, 5)
                 VStack(alignment: .leading, spacing: 5) {
                     Text(assignment.name)
@@ -109,7 +109,7 @@ struct AssignmentView: View {
                 
                 Text("\(assignment.gradeString)/\(assignment.outOf)")
                     .font(.system(size: 16, weight: .regular))
-                    .foregroundStyle(.orange)
+                    .foregroundStyle(.orange.mix(with: .red, by: 1/3))
                     .padding(.trailing, 8)
             }
         }
@@ -200,45 +200,6 @@ struct AssignmentsSectionView: View {
         }
     }
 }
-
-
-
-// MARK: Stat Capsule View
-struct StatCapsuleView: View {
-    let label: String
-    let imageName: String
-    let primary: String
-    let secondary: String?
-
-    var body: some View {
-        HStack(alignment: .firstTextBaseline) {
-            VStack(alignment: .leading, spacing: 15) {
-                Image(systemName: imageName)
-                    .foregroundStyle(.secondary)
-                Text(label)
-                    .font(.system(size: 17, weight: .medium, design: .default))
-                    .foregroundStyle(.secondary)
-            }
-
-            Spacer()
-
-            HStack(alignment: .lastTextBaseline, spacing: 0) {
-                Text(primary)
-                    .font(.system(size: 24, weight: .medium, design: .default))
-                    .foregroundStyle(.primary)
-
-                if let secondary {
-                    Text("\(secondary)")
-                        .font(.system(size: 15, weight: .medium, design: .default))
-                        .foregroundStyle(.secondary)
-                }
-            }
-        }
-        .padding(15)
-        .background(.regularMaterial, in: RoundedRectangle(cornerRadius: 20))
-    }
-}
-
 
 #Preview {
     GradesView()
