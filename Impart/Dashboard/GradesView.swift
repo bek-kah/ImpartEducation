@@ -54,6 +54,7 @@ struct GradesView: View {
             }
             .listStyle(.plain)
             .scrollContentBackground(.hidden)
+            .navigationTitle("Grades")
         }
     }
 }
@@ -71,7 +72,7 @@ struct StatCapsuleView: View {
                 Image(systemName: imageName)
                     .foregroundStyle(.white.opacity(2/3))
                 Text(label)
-                    .font(.system(size: 17, weight: .medium, design: .default))
+                    .font(.custom("Inter-Regular_Medium", size: 17))
                     .foregroundStyle(.white.opacity(2/3))
             }
 
@@ -79,12 +80,12 @@ struct StatCapsuleView: View {
 
             HStack(alignment: .lastTextBaseline, spacing: 0) {
                 Text(primary)
-                    .font(.system(size: 24, weight: .medium, design: .default))
+                    .font(.custom("Inter-Regular_Medium", size: 24))
                     .foregroundStyle(.white)
 
                 if let secondary {
                     Text("\(secondary)")
-                        .font(.system(size: 15, weight: .medium, design: .default))
+                        .font(.custom("Inter-Regular_Medium", size: 15))
                         .foregroundStyle(.white.opacity(2/3))
                 }
             }

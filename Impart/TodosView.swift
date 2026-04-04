@@ -9,7 +9,7 @@ struct TodosView: View {
                     TodoView(todo: todo)
                 }
             }
-            .navigationTitle("Impart")
+            .navigationTitle("To-dos")
             .listStyle(.plain)
             .scrollContentBackground(.hidden)
             .navigationBarTitleDisplayMode(.inline)
@@ -25,12 +25,14 @@ struct TodoView: View {
         HStack {
             VStack(alignment: .leading, spacing: 5) {
                 Text(todo.course)
-                    .font(.system(size: 16, weight: .medium))
+                    .font(.custom("Inter-Regular", size: 14))
                     .foregroundStyle(.blue)
                 Text(todo.title)
                     .font(.system(size: 16, weight: .medium))
+                    .font(.custom("Inter-Regular_Medium", size: 16))
                 Text("Due " + todo.dueDate.formatted())
                     .font(.system(size: 14, weight: .regular))
+                    .font(.custom("Inter-Regular", size: 14))
                     .foregroundStyle(.secondary)
             }
             

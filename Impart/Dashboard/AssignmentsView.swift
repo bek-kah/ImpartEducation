@@ -14,6 +14,7 @@ struct AssignmentsView: View {
             }
             .listStyle(.plain)
             .scrollContentBackground(.hidden)
+            .navigationTitle("Assignments")
         }
     }
 }

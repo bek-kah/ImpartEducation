@@ -8,6 +8,14 @@
 
 /* Begin PBXBuildFile section */
 		4700E2F62F7CB1DB00DCCB61 /* TodosView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4700E2F52F7CB1DB00DCCB61 /* TodosView.swift */; };
+		4700E2FE2F7F39EB00DCCB61 /* SecurityView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4700E2FD2F7F39EB00DCCB61 /* SecurityView.swift */; };
+		4700E3002F7F3A0A00DCCB61 /* AccountManagementView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4700E2FF2F7F3A0A00DCCB61 /* AccountManagementView.swift */; };
+		4700E3022F7F3A2900DCCB61 /* NotificationsView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4700E3012F7F3A2900DCCB61 /* NotificationsView.swift */; };
+		4700E3062F7F3BAA00DCCB61 /* ChangeEmailView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4700E3052F7F3BAA00DCCB61 /* ChangeEmailView.swift */; };
+		4700E3082F7F3BB200DCCB61 /* ChangePasswordView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4700E3072F7F3BB200DCCB61 /* ChangePasswordView.swift */; };
+		4700E30A2F7F3BC200DCCB61 /* PersonalInformationView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4700E3092F7F3BC200DCCB61 /* PersonalInformationView.swift */; };
+		4700E30C2F80B76F00DCCB61 /* Inter-VariableFont_opsz,wght.ttf in Resources */ = {isa = PBXBuildFile; fileRef = 4700E30B2F80B76F00DCCB61 /* Inter-VariableFont_opsz,wght.ttf */; };
+		4700E30F2F80BD6A00DCCB61 /* Lora-VariableFont_wght.ttf in Resources */ = {isa = PBXBuildFile; fileRef = 4700E30E2F80BD6A00DCCB61 /* Lora-VariableFont_wght.ttf */; };
 		477E32F12F60F8E300D55F07 /* Auth in Frameworks */ = {isa = PBXBuildFile; productRef = 477E32F02F60F8E300D55F07 /* Auth */; };
 		477E32F32F60F8E300D55F07 /* Storage in Frameworks */ = {isa = PBXBuildFile; productRef = 477E32F22F60F8E300D55F07 /* Storage */; };
 		47CFB6B02F75FACC002F3C04 /* Assignments.swift in Sources */ = {isa = PBXBuildFile; fileRef = 47CFB6AF2F75FACC002F3C04 /* Assignments.swift */; };
@@ -27,6 +35,15 @@
 
 /* Begin PBXFileReference section */
 		4700E2F52F7CB1DB00DCCB61 /* TodosView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TodosView.swift; sourceTree = "<group>"; };
+		4700E2FD2F7F39EB00DCCB61 /* SecurityView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SecurityView.swift; sourceTree = "<group>"; };
+		4700E2FF2F7F3A0A00DCCB61 /* AccountManagementView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AccountManagementView.swift; sourceTree = "<group>"; };
+		4700E3012F7F3A2900DCCB61 /* NotificationsView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NotificationsView.swift; sourceTree = "<group>"; };
+		4700E3052F7F3BAA00DCCB61 /* ChangeEmailView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ChangeEmailView.swift; sourceTree = "<group>"; };
+		4700E3072F7F3BB200DCCB61 /* ChangePasswordView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ChangePasswordView.swift; sourceTree = "<group>"; };
+		4700E3092F7F3BC200DCCB61 /* PersonalInformationView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PersonalInformationView.swift; sourceTree = "<group>"; };
+		4700E30B2F80B76F00DCCB61 /* Inter-VariableFont_opsz,wght.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "Inter-VariableFont_opsz,wght.ttf"; sourceTree = "<group>"; };
+		4700E30D2F80B7CA00DCCB61 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist; path = Info.plist; sourceTree = "<group>"; };
+		4700E30E2F80BD6A00DCCB61 /* Lora-VariableFont_wght.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "Lora-VariableFont_wght.ttf"; sourceTree = "<group>"; };
 		470D7A4A2F574E50008B64DD /* Impart.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = Impart.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		47CFB6AF2F75FACC002F3C04 /* Assignments.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Assignments.swift; sourceTree = "<group>"; };
 		47CFB6B12F760FAC002F3C04 /* GradesView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GradesView.swift; sourceTree = "<group>"; };
@@ -56,6 +73,41 @@
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		4700E3032F7F3A9100DCCB61 /* Settings */ = {
+			isa = PBXGroup;
+			children = (
+				47D6F3AC2F61000000A0CC28 /* SettingsView.swift */,
+				4700E3042F7F3B4C00DCCB61 /* AccountManagement */,
+				4700E3012F7F3A2900DCCB61 /* NotificationsView.swift */,
+				4700E2FD2F7F39EB00DCCB61 /* SecurityView.swift */,
+			);
+			path = Settings;
+			sourceTree = "<group>";
+		};
+		4700E3042F7F3B4C00DCCB61 /* AccountManagement */ = {
+			isa = PBXGroup;
+			children = (
+				4700E2FF2F7F3A0A00DCCB61 /* AccountManagementView.swift */,
+				4700E3092F7F3BC200DCCB61 /* PersonalInformationView.swift */,
+				4700E3052F7F3BAA00DCCB61 /* ChangeEmailView.swift */,
+				4700E3072F7F3BB200DCCB61 /* ChangePasswordView.swift */,
+			);
+			path = AccountManagement;
+			sourceTree = "<group>";
+		};
+		4700E3102F80BEF200DCCB61 /* Dashboard */ = {
+			isa = PBXGroup;
+			children = (
+				47D6F3A92F61000000A0CC28 /* DashboardView.swift */,
+				47D6F3A82F61000000A0CC28 /* CourseView.swift */,
+				47E98F0D2F736F60005C8275 /* CurriculumView.swift */,
+				47E98F0F2F73700E005C8275 /* AssignmentsView.swift */,
+				47CFB6AF2F75FACC002F3C04 /* Assignments.swift */,
+				47CFB6B12F760FAC002F3C04 /* GradesView.swift */,
+			);
+			path = Dashboard;
+			sourceTree = "<group>";
+		};
 		470D7A412F574E50008B64DD = {
 			isa = PBXGroup;
 			children = (
@@ -83,17 +135,15 @@
 		47D6F3AE2F61000000A0CC28 /* Impart */ = {
 			isa = PBXGroup;
 			children = (
+				4700E30D2F80B7CA00DCCB61 /* Info.plist */,
+				4700E30B2F80B76F00DCCB61 /* Inter-VariableFont_opsz,wght.ttf */,
+				4700E30E2F80BD6A00DCCB61 /* Lora-VariableFont_wght.ttf */,
 				47D6F3A62F61000000A0CC28 /* Assets.xcassets */,
 				47D6F3A72F61000000A0CC28 /* AuthView.swift */,
 				47D6F3AA2F61000000A0CC28 /* HomeView.swift */,
 				4700E2F52F7CB1DB00DCCB61 /* TodosView.swift */,
-				47D6F3A92F61000000A0CC28 /* DashboardView.swift */,
-				47D6F3AC2F61000000A0CC28 /* SettingsView.swift */,
-				47D6F3A82F61000000A0CC28 /* CourseView.swift */,
-				47E98F0D2F736F60005C8275 /* CurriculumView.swift */,
-				47E98F0F2F73700E005C8275 /* AssignmentsView.swift */,
-				47CFB6AF2F75FACC002F3C04 /* Assignments.swift */,
-				47CFB6B12F760FAC002F3C04 /* GradesView.swift */,
+				4700E3102F80BEF200DCCB61 /* Dashboard */,
+				4700E3032F7F3A9100DCCB61 /* Settings */,
 				47D6F3AB2F61000000A0CC28 /* ImpartApp.swift */,
 				47D6F3AD2F61000000A0CC28 /* Supabase.swift */,
 			);
@@ -173,7 +223,9 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				4700E30C2F80B76F00DCCB61 /* Inter-VariableFont_opsz,wght.ttf in Resources */,
 				47D6F3B62F61000000A0CC28 /* Assets.xcassets in Resources */,
+				4700E30F2F80BD6A00DCCB61 /* Lora-VariableFont_wght.ttf in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -187,13 +239,19 @@
 				47D6F3AF2F61000000A0CC28 /* AuthView.swift in Sources */,
 				47D6F3B02F61000000A0CC28 /* CourseView.swift in Sources */,
 				47E98F102F73700E005C8275 /* AssignmentsView.swift in Sources */,
+				4700E3082F7F3BB200DCCB61 /* ChangePasswordView.swift in Sources */,
+				4700E2FE2F7F39EB00DCCB61 /* SecurityView.swift in Sources */,
 				47D6F3B12F61000000A0CC28 /* DashboardView.swift in Sources */,
 				47D6F3B22F61000000A0CC28 /* HomeView.swift in Sources */,
 				47D6F3B32F61000000A0CC28 /* ImpartApp.swift in Sources */,
 				47E98F0E2F736F60005C8275 /* CurriculumView.swift in Sources */,
 				47CFB6B22F760FAC002F3C04 /* GradesView.swift in Sources */,
+				4700E3062F7F3BAA00DCCB61 /* ChangeEmailView.swift in Sources */,
+				4700E30A2F7F3BC200DCCB61 /* PersonalInformationView.swift in Sources */,
 				47CFB6B02F75FACC002F3C04 /* Assignments.swift in Sources */,
 				47D6F3B42F61000000A0CC28 /* SettingsView.swift in Sources */,
+				4700E3022F7F3A2900DCCB61 /* NotificationsView.swift in Sources */,
+				4700E3002F7F3A0A00DCCB61 /* AccountManagementView.swift in Sources */,
 				4700E2F62F7CB1DB00DCCB61 /* TodosView.swift in Sources */,
 				47D6F3B52F61000000A0CC28 /* Supabase.swift in Sources */,
 			);
@@ -360,6 +418,7 @@
 				DEVELOPMENT_TEAM = 6BB26UGW9Q;
 				ENABLE_PREVIEWS = YES;
 				GENERATE_INFOPLIST_FILE = YES;
+				INFOPLIST_FILE = Impart/Info.plist;
 				INFOPLIST_KEY_UIApplicationSceneManifest_Generation = YES;
 				INFOPLIST_KEY_UIApplicationSupportsIndirectInputEvents = YES;
 				INFOPLIST_KEY_UILaunchScreen_Generation = YES;
@@ -392,6 +451,7 @@
 				DEVELOPMENT_TEAM = 6BB26UGW9Q;
 				ENABLE_PREVIEWS = YES;
 				GENERATE_INFOPLIST_FILE = YES;
+				INFOPLIST_FILE = Impart/Info.plist;
 				INFOPLIST_KEY_UIApplicationSceneManifest_Generation = YES;
 				INFOPLIST_KEY_UIApplicationSupportsIndirectInputEvents = YES;
 				INFOPLIST_KEY_UILaunchScreen_Generation = YES;

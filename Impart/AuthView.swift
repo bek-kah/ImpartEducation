@@ -40,7 +40,7 @@ extension AuthView {
     var logInView: some View {
         Group {
             Text("Welcome back")
-                .font(.largeTitle)
+                .font(.custom("Inter-Regular", size: 30))
             
             Text("Sign in to your Impart account")
             
@@ -75,6 +75,7 @@ extension AuthView {
                 Button("Sign up", action: { authPageType = .signUp })
             }
         }
+        .font(.custom("Inter-Regular", size: 17))
     }
     
     func performLogin() {

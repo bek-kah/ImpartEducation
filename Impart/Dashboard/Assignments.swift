@@ -93,15 +93,15 @@ struct AssignmentView: View {
                     .padding(.trailing, 5)
                 VStack(alignment: .leading, spacing: 5) {
                     Text(assignment.name)
-                        .font(.system(size: 16, weight: .medium))
+                        .font(.custom("Inter-Regular_Medium", size: 16))
                     Text(assignment.dueDateString)
-                        .font(.system(size: 14, weight: .regular))
+                        .font(.custom("Inter-Regular", size: 14))
                         .foregroundStyle(.secondary)
                     HStack {
                         Text(assignment.submissionStatus.text)
                         Image(systemName: assignment.submissionStatus.systemImage)
                     }
-                    .font(.system(size: 14, weight: .regular))
+                    .font(.custom("Inter-Regular", size: 14))
                     .foregroundStyle(assignment.submissionStatus.foregroundStyle)
                 }
                 
@@ -187,6 +187,7 @@ struct AssignmentsSectionView: View {
         } header: {
             HStack {
                 Text(assignmentsSection.type.text)
+                    .font(.custom("Inter-Regular_Medium", size: 16))
                 Spacer()
                 Button {
                     withAnimation {

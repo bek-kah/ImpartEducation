@@ -19,6 +19,7 @@ struct HomeView: View {
                         SettingsView()
                     }
                 }
+                .font(.custom("Inter-Regular", size: 17))
                 .transition(.move(edge: .trailing))
             } else {
                 AuthView()

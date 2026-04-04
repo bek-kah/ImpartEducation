@@ -20,7 +20,7 @@ struct DashboardView: View {
                         Spacer()
                         VStack(alignment: .leading) {
                             Text("CORE CS")
-                                .font(.system(size: 10, weight: .black))
+                                .font(.custom("Inter-Regular_Black", size: 10))
                                 .padding(.horizontal, 10)
                                 .padding(.vertical, 6)
                                 .background(
@@ -44,18 +44,19 @@ struct DashboardView: View {
                     
                     Text("Introduction to Computer Science")
                         .padding(.bottom)
-                        .font(.title)
-                        .bold()
+                        .font(.custom("Inter-Regular_Bold", size: 24))
 
                     
                     Text("Build a strong foundation in programming fundamentals, problem-solving strategies, and computational thinking. Learn core concepts through hands-on coding exercise and real-world applications.")
                         .padding(.bottom, 50)
+                        .font(.custom("Inter-Regular", size: 16))
                     
                     NavigationLink {
                         CourseView()
                     } label: {
                         Text("View Syllabus")
                             .foregroundStyle(.secondary)
+                            .font(.custom("Inter-Regular", size: 16))
                     }
                 }
                 .padding(.horizontal)

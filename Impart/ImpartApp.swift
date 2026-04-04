@@ -4,6 +4,10 @@ import SwiftUI
 struct ImpartApp: App {
     @StateObject private var supabase = SupabaseManager()
     
+    init() {
+        applyGlobalFonts()
+    }
+    
     var body: some Scene {
         WindowGroup {
             if supabase.isLoading {
@@ -17,4 +21,15 @@ struct ImpartApp: App {
             }
         }
     }
+}
+
+func applyGlobalFonts() {
+    let largeAttr: [NSAttributedString.Key: Any] = [
+        .font: UIFont(name: "Lora", size: 34)!
+    ]
+    let inlineAttr: [NSAttributedString.Key: Any] = [
+        .font: UIFont(name: "Lora", size: 17)!
+    ]
+    UINavigationBar.appearance().largeTitleTextAttributes = largeAttr
+    UINavigationBar.appearance().titleTextAttributes = inlineAttr
 }

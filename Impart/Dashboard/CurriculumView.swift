@@ -4,7 +4,7 @@ struct CurriculumView: View {
     var body: some View {
         NavigationStack {
             List {
-                Section("Getting Started") {
+                Section {
                     NavigationLink {
                         
                     } label: {
@@ -28,9 +28,12 @@ struct CurriculumView: View {
                             Spacer()
                         }
                     }
+                } header: {
+                    Text("Getting Started")
+                        .font(.custom("Inter-Regular_Medium", size: 16))
                 }
                 
-                Section("Unit 1: Variables, Operators, and Functions") {
+                Section {
                     NavigationLink {
                         
                     } label: {
@@ -66,9 +69,15 @@ struct CurriculumView: View {
                             Spacer()
                         }
                     }
+                } header: {
+                    Text("Unit 1: Variables, Operators, and Functions")
+                    .font(.custom("Inter-Regular_Medium", size: 16))
                 }
             }
+            .font(.custom("Inter-Regular", size: 17))
+            .listStyle(.plain)
             .scrollContentBackground(.hidden)
+            .navigationTitle("Curriculum")
         }
     }
 }
