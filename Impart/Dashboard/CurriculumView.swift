@@ -6,7 +6,7 @@ struct CurriculumView: View {
             List {
                 Section {
                     NavigationLink {
-                        
+                        UnitModuleView(unitModule: courseInformation)
                     } label: {
                         HStack {
                             Image(systemName: "play.circle")
@@ -18,7 +18,7 @@ struct CurriculumView: View {
                     }
                     
                     NavigationLink {
-                        
+                        UnitModuleView(unitModule: settingUp)
                     } label: {
                         HStack {
                             Image(systemName: "play.circle")
@@ -38,37 +38,40 @@ struct CurriculumView: View {
                         
                     } label: {
                         HStack {
-                            Image(systemName: "play.circle")
-                                .foregroundStyle(Color.blue.opacity(0.7))
+                            Image(systemName: "lock")
+                                .foregroundStyle(.secondary)
                                 .padding(.trailing, 5)
                             Text("Python")
                             Spacer()
                         }
                     }
+                    .disabled(true)
                     
                     NavigationLink {
                         
                     } label: {
                         HStack {
-                            Image(systemName: "play.circle")
-                                .foregroundStyle(Color.blue.opacity(0.7))
+                            Image(systemName: "lock")
+                                .foregroundStyle(.secondary)
                                 .padding(.trailing, 5)
                             Text("Functions, Variables, and Operators")
                             Spacer()
                         }
                     }
+                    .disabled(true)
                     
                     NavigationLink {
                         
                     } label: {
                         HStack {
-                            Image(systemName: "play.circle")
-                                .foregroundStyle(Color.blue.opacity(0.7))
+                            Image(systemName: "lock")
+                                .foregroundStyle(.secondary)
                                 .padding(.trailing, 5)
                             Text("Typing, Comments, and More")
                             Spacer()
                         }
                     }
+                    .disabled(true)
                 } header: {
                     Text("Unit 1: Variables, Operators, and Functions")
                     .font(.custom("Inter-Regular_Medium", size: 16))

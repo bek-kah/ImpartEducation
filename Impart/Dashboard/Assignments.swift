@@ -55,15 +55,29 @@ struct Assignment {
     let grade: Double?
     let outOf: Int
     
+    let description: [String]
+    let hints: [String]
+    
     let status: AssignmentStatus
     let submissionStatus: AssignmentSubmissionStatus
     
-    init(id: UUID = UUID(), name: String, dueDate: Date, grade: Double?, outOf: Int, status: AssignmentStatus, submissionStatus: AssignmentSubmissionStatus) {
+    init(
+        id: UUID = UUID(),
+        name: String, dueDate: Date,
+        grade: Double?,
+        outOf: Int,
+        description: [String] = [],
+        hints: [String] = [],
+        status: AssignmentStatus,
+        submissionStatus: AssignmentSubmissionStatus
+    ) {
         self.id = id
         self.name = name
         self.dueDate = dueDate
         self.grade = grade
         self.outOf = outOf
+        self.description = description
+        self.hints = hints
         self.status = status
         self.submissionStatus = submissionStatus
     }
@@ -76,16 +90,48 @@ struct Assignment {
     }
     
     var gradeString: String {
-        grade.map { String($0.rounded()) } ?? "-"
+        if let grade {
+            return grade.formatted(.number.precision(.fractionLength(0...2)))
+        }
+        return ""
+    }
+    
+    static func fake() -> Self {
+        let calendar = Calendar.current
+        let dueDayAfterNext = calendar.date(byAdding: .day, value: 2, to: Date())!
+        
+        let description: [String] = [
+            "Toward the beginning of World 1-1 in Nintendo's Super Mario Brothers, Mario must hop over adjacent pyramids of block.",
+            "In a file called mario.py, implement a program in Python that recreates that pyramid, using hashes (#) for bricks.",
+            "And let's allow the user to decide just how tall the pyramids should be by first prompting them for a positive integer between, say, 1 and 8, inclusive."
+        ]
+        
+        let hints: [String] = [
+            "Think about what each row looks like: some number of spaces, then hashes, then a gap of two spaces, then more hashes.",
+            "For row i (starting from 1) of a pyramid with height n, how many spaces and how many hashes do you need?",
+            "Use Python's string multiplication (\" \" * count) to repeat characters easily.",
+            "Use a while loop to keep prompting the user until they provide valid input."
+        ]
+        
+        return Assignment(
+            name: "Problem Set 1",
+            dueDate: dueDayAfterNext,
+            grade: 4,
+            outOf: 10,
+            description: description,
+            hints: hints,
+            status: .open,
+            submissionStatus: .graded
+        )
     }
 }
 
-struct AssignmentView: View {
+struct AssignmentRowView: View {
     let assignment: Assignment
     
     var body: some View {
         NavigationLink {
-            
+            AssignmentView()
         } label: {
             HStack {
                 Image(systemName: assignment.status.systemImage)
@@ -142,7 +188,7 @@ struct AssignmentsSection {
         )
         
         let dueDayAfterNext = calendar.date(byAdding: .day, value: 2, to: Date())!
-
+        
         let upcomingAssignment2 = Assignment(
             name: "Problem Set 1",
             dueDate: dueDayAfterNext,
@@ -181,7 +227,7 @@ struct AssignmentsSectionView: View {
         Section {
             if showAssignmentsSection {
                 ForEach(assignmentsSection.assignments, id: \.id) { assignment in
-                    AssignmentView(assignment: assignment)
+                    AssignmentRowView(assignment: assignment)
                 }
             }
         } header: {

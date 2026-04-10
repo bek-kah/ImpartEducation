@@ -16,10 +16,14 @@
 		4700E30A2F7F3BC200DCCB61 /* PersonalInformationView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4700E3092F7F3BC200DCCB61 /* PersonalInformationView.swift */; };
 		4700E30C2F80B76F00DCCB61 /* Inter-VariableFont_opsz,wght.ttf in Resources */ = {isa = PBXBuildFile; fileRef = 4700E30B2F80B76F00DCCB61 /* Inter-VariableFont_opsz,wght.ttf */; };
 		4700E30F2F80BD6A00DCCB61 /* Lora-VariableFont_wght.ttf in Resources */ = {isa = PBXBuildFile; fileRef = 4700E30E2F80BD6A00DCCB61 /* Lora-VariableFont_wght.ttf */; };
+		473C8C9D2F886EDA00441CFC /* UnitModuleView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 473C8C9C2F886EDA00441CFC /* UnitModuleView.swift */; };
+		473C8C9F2F888C8E00441CFC /* Inter-Italic-VariableFont_opsz,wght.ttf in Resources */ = {isa = PBXBuildFile; fileRef = 473C8C9E2F888C8E00441CFC /* Inter-Italic-VariableFont_opsz,wght.ttf */; };
+		473C8CA12F888E5600441CFC /* UnitModules.swift in Sources */ = {isa = PBXBuildFile; fileRef = 473C8CA02F888E5600441CFC /* UnitModules.swift */; };
 		477E32F12F60F8E300D55F07 /* Auth in Frameworks */ = {isa = PBXBuildFile; productRef = 477E32F02F60F8E300D55F07 /* Auth */; };
 		477E32F32F60F8E300D55F07 /* Storage in Frameworks */ = {isa = PBXBuildFile; productRef = 477E32F22F60F8E300D55F07 /* Storage */; };
 		47CFB6B02F75FACC002F3C04 /* Assignments.swift in Sources */ = {isa = PBXBuildFile; fileRef = 47CFB6AF2F75FACC002F3C04 /* Assignments.swift */; };
 		47CFB6B22F760FAC002F3C04 /* GradesView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 47CFB6B12F760FAC002F3C04 /* GradesView.swift */; };
+		47D2B5122F85C5DF00A1E107 /* AssignmentView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 47D2B5112F85C5DF00A1E107 /* AssignmentView.swift */; };
 		47D6F3A52F60FAA000A0CC28 /* Supabase in Frameworks */ = {isa = PBXBuildFile; productRef = 47D6F3A42F60FAA000A0CC28 /* Supabase */; };
 		47D6F3AF2F61000000A0CC28 /* AuthView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 47D6F3A72F61000000A0CC28 /* AuthView.swift */; };
 		47D6F3B02F61000000A0CC28 /* CourseView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 47D6F3A82F61000000A0CC28 /* CourseView.swift */; };
@@ -45,8 +49,12 @@
 		4700E30D2F80B7CA00DCCB61 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist; path = Info.plist; sourceTree = "<group>"; };
 		4700E30E2F80BD6A00DCCB61 /* Lora-VariableFont_wght.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "Lora-VariableFont_wght.ttf"; sourceTree = "<group>"; };
 		470D7A4A2F574E50008B64DD /* Impart.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = Impart.app; sourceTree = BUILT_PRODUCTS_DIR; };
+		473C8C9C2F886EDA00441CFC /* UnitModuleView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UnitModuleView.swift; sourceTree = "<group>"; };
+		473C8C9E2F888C8E00441CFC /* Inter-Italic-VariableFont_opsz,wght.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "Inter-Italic-VariableFont_opsz,wght.ttf"; sourceTree = "<group>"; };
+		473C8CA02F888E5600441CFC /* UnitModules.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UnitModules.swift; sourceTree = "<group>"; };
 		47CFB6AF2F75FACC002F3C04 /* Assignments.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Assignments.swift; sourceTree = "<group>"; };
 		47CFB6B12F760FAC002F3C04 /* GradesView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GradesView.swift; sourceTree = "<group>"; };
+		47D2B5112F85C5DF00A1E107 /* AssignmentView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AssignmentView.swift; sourceTree = "<group>"; };
 		47D6F3A62F61000000A0CC28 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		47D6F3A72F61000000A0CC28 /* AuthView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AuthView.swift; sourceTree = "<group>"; };
 		47D6F3A82F61000000A0CC28 /* CourseView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CourseView.swift; sourceTree = "<group>"; };
@@ -103,6 +111,9 @@
 				47E98F0D2F736F60005C8275 /* CurriculumView.swift */,
 				47E98F0F2F73700E005C8275 /* AssignmentsView.swift */,
 				47CFB6AF2F75FACC002F3C04 /* Assignments.swift */,
+				47D2B5112F85C5DF00A1E107 /* AssignmentView.swift */,
+				473C8C9C2F886EDA00441CFC /* UnitModuleView.swift */,
+				473C8CA02F888E5600441CFC /* UnitModules.swift */,
 				47CFB6B12F760FAC002F3C04 /* GradesView.swift */,
 			);
 			path = Dashboard;
@@ -136,6 +147,7 @@
 			isa = PBXGroup;
 			children = (
 				4700E30D2F80B7CA00DCCB61 /* Info.plist */,
+				473C8C9E2F888C8E00441CFC /* Inter-Italic-VariableFont_opsz,wght.ttf */,
 				4700E30B2F80B76F00DCCB61 /* Inter-VariableFont_opsz,wght.ttf */,
 				4700E30E2F80BD6A00DCCB61 /* Lora-VariableFont_wght.ttf */,
 				47D6F3A62F61000000A0CC28 /* Assets.xcassets */,
@@ -226,6 +238,7 @@
 				4700E30C2F80B76F00DCCB61 /* Inter-VariableFont_opsz,wght.ttf in Resources */,
 				47D6F3B62F61000000A0CC28 /* Assets.xcassets in Resources */,
 				4700E30F2F80BD6A00DCCB61 /* Lora-VariableFont_wght.ttf in Resources */,
+				473C8C9F2F888C8E00441CFC /* Inter-Italic-VariableFont_opsz,wght.ttf in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -240,7 +253,9 @@
 				47D6F3B02F61000000A0CC28 /* CourseView.swift in Sources */,
 				47E98F102F73700E005C8275 /* AssignmentsView.swift in Sources */,
 				4700E3082F7F3BB200DCCB61 /* ChangePasswordView.swift in Sources */,
+				473C8C9D2F886EDA00441CFC /* UnitModuleView.swift in Sources */,
 				4700E2FE2F7F39EB00DCCB61 /* SecurityView.swift in Sources */,
+				47D2B5122F85C5DF00A1E107 /* AssignmentView.swift in Sources */,
 				47D6F3B12F61000000A0CC28 /* DashboardView.swift in Sources */,
 				47D6F3B22F61000000A0CC28 /* HomeView.swift in Sources */,
 				47D6F3B32F61000000A0CC28 /* ImpartApp.swift in Sources */,
@@ -249,6 +264,7 @@
 				4700E3062F7F3BAA00DCCB61 /* ChangeEmailView.swift in Sources */,
 				4700E30A2F7F3BC200DCCB61 /* PersonalInformationView.swift in Sources */,
 				47CFB6B02F75FACC002F3C04 /* Assignments.swift in Sources */,
+				473C8CA12F888E5600441CFC /* UnitModules.swift in Sources */,
 				47D6F3B42F61000000A0CC28 /* SettingsView.swift in Sources */,
 				4700E3022F7F3A2900DCCB61 /* NotificationsView.swift in Sources */,
 				4700E3002F7F3A0A00DCCB61 /* AccountManagementView.swift in Sources */,
