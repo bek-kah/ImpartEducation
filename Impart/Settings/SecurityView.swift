@@ -1,25 +1,13 @@
+import LocalAuthentication
 import SwiftUI
 
 struct SecurityView: View {
-    @State var twoFactor: Bool = false
-    @State var faceID: Bool = false
+    @AppStorage("faceID") var faceID: Bool = false
     
     var body: some View {
         NavigationStack {
             List {
                 Section {
-                    HStack(alignment: .firstTextBaseline) {
-                        VStack(alignment: .leading, spacing: 8) {
-                            Text("Two-factor authentication")
-                            Text("This makes your account more secure. In addition to your password you'll be asked for a code we text to your phone eac time you log in.")
-                                .foregroundStyle(.secondary)
-                                .font(.custom("Inter-Regular", size: 14))
-                        }
-                        Spacer()
-                        Toggle("", isOn: $twoFactor)
-                            .frame(maxWidth: 75)
-                    }
-                    
                     HStack(alignment: .firstTextBaseline) {
                         VStack(alignment: .leading, spacing: 8) {
                             Text("Face ID")
